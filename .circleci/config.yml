@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs: 
-  builder:
+  starter:
     docker:
     - image: circleci/node
 
@@ -13,4 +13,4 @@ jobs:
 workflows:
   builder:
     jobs:
-    - builder
+    - starter
