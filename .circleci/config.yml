@@ -16,7 +16,9 @@ jobs:
     steps:
     - checkout
     - run: echo "hello world ${env}"
-    - run: echo "hello world2"
+    - run: echo "hello world2 ${AUTH}"
+    environment:
+        AUTH : USER
 
   ender:
     docker:
