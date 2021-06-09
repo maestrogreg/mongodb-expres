@@ -1,5 +1,10 @@
 version: 2.1
 
+executors:
+  docker_container:
+    - docker:
+      - image: circleci/node
+      
 workflows:
   builder:
     jobs:
@@ -7,10 +12,6 @@ workflows:
     - ender: 
         requires:
             - starter
-executors:
-  docker_container:
-    - docker:
-      - image: circleci/node
 
 jobs: 
   starter:
