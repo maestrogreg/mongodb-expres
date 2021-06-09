@@ -1,5 +1,10 @@
 version: 2.1
 
+workflows:
+  builder:
+    jobs:
+    - starter
+    
 jobs: 
   starter:
     docker:
@@ -9,8 +14,3 @@ jobs:
     - checkout
     - run: echo "hello world"
     - run: echo "hello world2"
-
-workflows:
-  builder:
-    jobs:
-    - starter
