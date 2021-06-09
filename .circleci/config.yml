@@ -9,6 +9,11 @@ test:
   steps:
     - run: yarn
     - run: yarn test
+commands:
+  all_command:
+    steps:
+       - run: echo "hello world ${env}"
+       - run: echo "hello world2 ${AUTH}"
 
 workflows:
   builder:
@@ -24,8 +29,7 @@ jobs:
 
     steps:
     - checkout
-    - run: echo "hello world ${env}"
-    - run: echo "hello world2 ${AUTH}"
+    - all_command
     - test
     environment:
         AUTH : USER
