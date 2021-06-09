@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs: 
-  build:
+  builder:
     docker:
     - image: circleci/node
 
@@ -9,3 +9,7 @@ jobs:
     - checkout
     - run: echo "hello world"
     - run: echo "hello world2"
+
+workflow:
+  jobs:
+  - builder
