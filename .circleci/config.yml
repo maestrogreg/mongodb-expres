@@ -10,7 +10,7 @@ jobs:
     - run: echo "hello world"
     - run: echo "hello world2"
 
-workflow:
+workflows:
   builder:
     jobs:
     - builder
