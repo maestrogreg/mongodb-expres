@@ -4,7 +4,9 @@ workflows:
   builder:
     jobs:
     - starter
-    - ender
+    - ender: 
+        requires:
+            -starter
 
 jobs: 
   starter:
@@ -15,7 +17,7 @@ jobs:
     - checkout
     - run: echo "hello world"
     - run: echo "hello world2"
-    
+
   ender:
     docker:
     - image: circleci/node
