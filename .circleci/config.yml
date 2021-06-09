@@ -15,8 +15,7 @@ jobs:
     - checkout
     - run: echo "hello world"
     - run: echo "hello world2"
-
-jobs: 
+    
   ender:
     docker:
     - image: circleci/node
