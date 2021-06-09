@@ -9,7 +9,7 @@ workflows:
             - starter
 executors:
   docker_container:
-    -docker:
+    - docker:
       - image: circleci/node
 
 jobs: 
