@@ -5,6 +5,11 @@ executors:
    docker:
       - image: circleci/node
 
+test:
+  steps:
+    - run: yarn
+    - run: yarn test
+
 workflows:
   builder:
     jobs:

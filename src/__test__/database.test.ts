@@ -36,15 +36,15 @@ const userData:{
    phone: number,
    password:string
  } ={
-  firstName: "userg",
-  lastName: "lasty",
-  userName: "userlast",
+  firstName: "usery",
+  lastName: "lastyy",
+  userName: "userlasty",
   phone: 999090909,
   password: "123456"
 };
 
 const loginCred = {
-  userName: "userlast",
+  userName: "userlasty",
   password: "123456"
 }
 afterAll(async() => {
@@ -57,7 +57,7 @@ describe('User Registers Successfully', ()=>{
         .post('/users/register')
         .send(person)
 
-        console.log(result);
+        console.log(result.body);
 
         expect(result.status).toBe(201);
 

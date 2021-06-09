@@ -1,10 +1,10 @@
 {
-  "name": "week-9-node-007-maestrogreg",
+  "name": "mongo-react-wk9",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "jest --runInBand"
+    "test": "yarn tsc && jest --runInBand"
   },
   "jest": {
     "testEnvironment": "node"

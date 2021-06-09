@@ -23,7 +23,7 @@ export const register = async (req:Request, res:Response) => {
         });
         user.save(user)
         .then((data: any) =>{
-            res.status(201).json({status:"ok",message:"user successfully added to the database"})
+            res.status(201).json({status:"ok",message:"user successfully added to the database", user})
         })
         .catch((error:HttpError) =>{
             res.status(400).json({status:"error", message:`${error.message}`});
