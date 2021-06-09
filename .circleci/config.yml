@@ -11,5 +11,6 @@ jobs:
     - run: echo "hello world2"
 
 workflow:
-  jobs:
-  - builder
+  builder:
+    jobs:
+    - builder
