@@ -14,7 +14,7 @@ executors:
 
 jobs: 
   starter:
-    docker: docker_container
+    executor: docker_container
 
     steps:
     - checkout
