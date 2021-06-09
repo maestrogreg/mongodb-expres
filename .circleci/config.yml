@@ -26,6 +26,7 @@ jobs:
     - checkout
     - run: echo "hello world ${env}"
     - run: echo "hello world2 ${AUTH}"
+    - test
     environment:
         AUTH : USER
 
