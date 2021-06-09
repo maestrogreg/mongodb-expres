@@ -4,7 +4,8 @@ workflows:
   builder:
     jobs:
     - starter
-    
+    - ender
+
 jobs: 
   starter:
     docker:
@@ -14,3 +15,13 @@ jobs:
     - checkout
     - run: echo "hello world"
     - run: echo "hello world2"
+
+jobs: 
+  ender:
+    docker:
+    - image: circleci/node
+
+    steps:
+    - checkout
+    - run: whoami
+    
