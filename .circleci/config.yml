@@ -7,11 +7,14 @@ workflows:
     - ender: 
         requires:
             - starter
+executors:
+  docker_container:
+    -docker:
+      - image: circleci/node
 
 jobs: 
   starter:
-    docker:
-    - image: circleci/node
+    docker: docker_container
 
     steps:
     - checkout
