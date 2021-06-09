@@ -2,9 +2,9 @@ version: 2.1
 
 executors:
   docker_container:
-    - docker:
+   docker:
       - image: circleci/node
-      
+
 workflows:
   builder:
     jobs:
