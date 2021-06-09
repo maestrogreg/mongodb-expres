@@ -4,6 +4,7 @@ executors:
   docker_container:
    docker:
       - image: circleci/node
+      - image: circleci/mongo
 
 commands:
   all_command:
