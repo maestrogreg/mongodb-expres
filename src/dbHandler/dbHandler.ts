@@ -4,19 +4,17 @@ import { MongoMemoryServer }  from 'mongodb-memory-server';
 const mongod = new MongoMemoryServer();
 
 export const dbConnect = async () =>{
-    const uri = await mongod.getConnectionString();
-    const mongooseOpts = {
+    const uri = await mongod.getUri();
+    //const mongooseOpts = ;
+    await mongoose.connect(uri,{
         useNewUrlParser: true,
-        autoReconnect: true,
-        recconectTries: Number.MAX_VALUE,
-        reconnectInterval: 1000
-    };
-    await mongoose.connect(uri, mongooseOpts);
+        useUnifiedTopology: true
+    });
 }
 
 export const dbDisconnect = async() =>{
-    await mongoose.connection.dropDatabase();
-    await mongoose.connection.close();
+    //await mongoose.connection.dropDatabase();
+    await mongoose.disconnect();
     await mongod.stop();
 }
 

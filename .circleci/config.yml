@@ -12,7 +12,7 @@ commands:
        - run: echo "hello world2 ${AUTH}"
   test:
     steps:
-    - run: yarn
+    - run: yarn install --frozen-lockfile
     - run: yarn test
 
 workflows:
