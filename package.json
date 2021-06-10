@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "yarn tsc && jest --runInBand"
+    "test": "jest"
   },
   "jest": {
     "testEnvironment": "node"
