@@ -13,7 +13,7 @@ commands:
   test:
     steps:
     - run: rm -rf node_modules
-    - run: yarn install --frozen-lockfile
+    - run: yarn install
     - run: yarn test
 
 workflows:
