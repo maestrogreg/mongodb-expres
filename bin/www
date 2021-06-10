@@ -4,13 +4,13 @@
  * Module dependencies.
  */
 
+const dotenv = require("dotenv");
+dotenv.config();
 const app = require('../dist/app').default;
 const debug = require('debug')('week-9-node-007-maestrogreg:server');
 const http = require('http');
 const { connect } = require('../dist/database/connection');
-// const dotenv = require("dotenv");
-// dotenv.config();
-// connect();
+connect();
 
 /**
  * Get port from environment and store in Express.

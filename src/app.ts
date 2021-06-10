@@ -8,11 +8,11 @@ import { dbConnect } from './dbHandler/dbHandler'
 import {connect } from './database/connection'
 dotenv.config();
 //connect();
-if(process.env.NODE_ENV === 'test'){
-  dbConnect()
-}else{
-  connect()
-}
+// if(process.env.NODE_ENV === 'test'){
+//   dbConnect()
+// }else{
+//   connect()
+// }
 
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';

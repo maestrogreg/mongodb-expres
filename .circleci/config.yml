@@ -4,7 +4,6 @@ executors:
   docker_container:
    docker:
       - image: circleci/node
-      - image: circleci/mongo
 
 commands:
   all_command:
@@ -20,9 +19,7 @@ workflows:
   builder:
     jobs:
     - starter
-    - ender: 
-        requires:
-            - starter
+    
 
 jobs: 
   starter:
@@ -35,11 +32,5 @@ jobs:
     environment:
         AUTH : USER
 
-  ender:
-    docker:
-    - image: circleci/node
-
-    steps:
-    - checkout
-    - run: whoami
+ 
     

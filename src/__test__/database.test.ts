@@ -4,11 +4,13 @@ import mongoose from'mongoose';
 import request from'supertest'
 //import { create } from'../../services/product';
 import app from'../app';
+import dotenv from 'dotenv';
+dotenv.config();
+import { dbConnect, dbDisconnect, clearDatabase} from '../dbHandler/dbHandler'
 
 
 let token:string = "";
 let userID: string = "";
-import { dbConnect, dbDisconnect, clearDatabase} from '../dbHandler/dbHandler'
 const userData:{
     organisation: string,
     products: string[],
@@ -47,9 +49,13 @@ const loginCred = {
   userName: "userlasty",
   password: "123456"
 }
+beforeAll(async()=>{
+  await dbConnect();
+})
 afterAll(async() => {
     await dbDisconnect();
 })
+
 
 describe('User Registers Successfully', ()=>{
     it('User registers successfully', async()=>{
