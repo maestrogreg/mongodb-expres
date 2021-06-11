@@ -4,13 +4,19 @@ import { MongoMemoryServer }  from 'mongodb-memory-server';
 const mongod = new MongoMemoryServer();
 
 export const dbConnect = async () =>{
-    const uri = await mongod.getUri();
-    //const mongooseOpts = ;
-     mongoose.connect(uri,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }).then(_=>console.log("connected to mongo"))
-    .catch(_=>console.log("notConnected to mongo"))
+    try {
+        const uri = await mongod.getUri();
+        //const mongooseOpts = ;
+         await mongoose.connect(uri,{
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
+        console.log("connected to mongo")
+        
+    } catch (error) {
+        
+        console.log("notConnected to mongo")
+    }
 }
 
 export const dbDisconnect = async() =>{
