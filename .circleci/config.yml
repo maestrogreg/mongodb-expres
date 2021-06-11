@@ -4,7 +4,7 @@ executors:
   docker_container:
    docker:
       - image: circleci/node
-      - image: circleci/mongodb
+      - image: circleci/mongo:latest
 
 commands:
   test:
