@@ -1,12 +1,21 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import User from'../models/registrationSchema';
 //import { user } from '../../testDB/fixtures/i';
-import mongoose from'mongoose';
+// import mongoose from'mongoose';
 import request from'supertest'
 //import { create } from'../../services/product';
 import app from'../app';
-import dotenv from 'dotenv';
-dotenv.config();
 import { dbConnect, dbDisconnect, clearDatabase} from '../dbHandler/dbHandler'
+
+beforeAll(async()=>{
+  await dbConnect();
+});
+
+
+afterAll(async() => {
+     dbDisconnect();
+})
 
 
 let token:string = "";
@@ -55,15 +64,6 @@ const loginCred = {
   password: "123456"
 }
 
-
-beforeAll(async()=>{
-  await dbConnect();
-});
-
-
-afterAll(async() => {
-    await dbDisconnect();
-})
 
 
 describe('User Registers Successfully', ()=>{

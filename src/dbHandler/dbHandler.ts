@@ -6,10 +6,11 @@ const mongod = new MongoMemoryServer();
 export const dbConnect = async () =>{
     const uri = await mongod.getUri();
     //const mongooseOpts = ;
-    await mongoose.connect(uri,{
+     mongoose.connect(uri,{
         useNewUrlParser: true,
         useUnifiedTopology: true
-    });
+    }).then(_=>console.log("connected to mongo"))
+    .catch(_=>console.log("notConnected to mongo"))
 }
 
 export const dbDisconnect = async() =>{
