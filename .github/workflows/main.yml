@@ -27,6 +27,5 @@ jobs:
 
       - name: Run a multi-line command
         run: |
-        rm -rf node_modules
         npm install
         npm test
