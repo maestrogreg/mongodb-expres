@@ -27,6 +27,6 @@ jobs:
 
       - name: Run a multi-line command
         run: |
-        npm install
-        npm tsc
-        npm test
+        yarn
+        yarn tsc
+        yarn test
