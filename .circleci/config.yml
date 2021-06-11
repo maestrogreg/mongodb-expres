@@ -4,16 +4,12 @@ executors:
   docker_container:
    docker:
       - image: circleci/node
+      - image: circleci/mongodb
 
 commands:
-  all_command:
-    steps:
-       - run: echo "hello world ${env}"
-       - run: echo "hello world2 ${AUTH}"
   test:
     steps:
-    - run: rm -rf node_modules
-    - run: yarn install
+    - run: yarn 
     - run: yarn tsc
     - run: yarn test
 
@@ -26,10 +22,8 @@ workflows:
 jobs: 
   starter:
     executor: docker_container
-
     steps:
     - checkout
-    - all_command
     - test
     environment:
         AUTH : USER
